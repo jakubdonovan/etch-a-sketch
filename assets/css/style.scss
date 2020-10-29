@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #e2e1e1;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+}
+
+header {
+    display: flex;
+    align-self: start;
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+    color: #0102008e;
+    margin: 1rem 0 0 1rem;
+
+}
+
+
+.frame {
+    height: 70rem;
+    width: 110rem;
+    display: grid;
+    grid-template: 0.8fr 5fr 0.8fr / 0.5fr 5fr 0.5fr;
+    grid-template-areas: 'title title title' '. canvas .' 'leftKnob settings rightKnob';
+
+    background: #CF0000;
+    box-shadow: 0px 1px 0 rgba(255,255,255,0.05) inset, 1px 0px 0 rgba(255,255,255,0.05) inset, 1px 2px 0 rgba(255,255,255,0.05) inset, 2px 1px 0 rgba(255,255,255,0.05) inset, 2px 3px 0 rgba(255,255,255,0.05) inset, 3px 2px 0 rgba(255,255,255,0.05) inset, 3px 4px 0 rgba(255,255,255,0.05) inset, 4px 3px 0 rgba(255,255,255,0.05) inset, 4px 5px 0 rgba(255,255,255,0.05) inset, 5px 4px 0 rgba(255,255,255,0.05) inset, 5px 6px 0 rgba(255,255,255,0.05) inset, 6px 5px 0 rgba(255,255,255,0.05) inset, 6px 7px 0 rgba(255,255,255,0.05) inset, 7px 6px 0 rgba(255,255,255,0.05) inset, 7px 9px 0 rgba(255,255,255,0.05) inset, 8px 7px 0 rgba(255,255,255,0.05) inset, 8px 9px 0 rgba(255,255,255,0.05) inset, 9px 8px 0 rgba(255,255,255,0.05) inset, -0px -1px 0 rgba(0,0,0,0.05) inset, -1px -0px 0 rgba(0,0,0,0.05) inset, -1px -2px 0 rgba(0,0,0,0.05) inset, -2px -1px 0 rgba(0,0,0,0.05) inset, -2px -3px 0 rgba(0,0,0,0.05) inset, -3px -2px 0 rgba(0,0,0,0.05) inset, -3px -4px 0 rgba(0,0,0,0.05) inset, -4px -3px 0 rgba(0,0,0,0.05) inset, -4px -5px 0 rgba(0,0,0,0.05) inset, -5px -4px 0 rgba(0,0,0,0.05) inset, -5px -6px 0 rgba(0,0,0,0.05) inset, -6px -5px 0 rgba(0,0,0,0.05) inset, -6px -7px 0 rgba(0,0,0,0.05) inset, -7px -6px 0 rgba(0,0,0,0.05) inset, -7px -9px 0 rgba(0,0,0,0.05) inset, -8px -7px 0 rgba(0,0,0,0.05) inset, -8px -9px 0 rgba(0,0,0,0.05) inset, -9px -8px 0 rgba(0,0,0,0.05) inset, 0 0 3px rgba(0,0,0,0.3), 2px 2px 3px rgba(0,0,0,0.3);
+    
+    border-radius: 3rem;
+    margin: 3em;
+    
+
+    .title {
+        grid-area: title;
+        justify-self: center;
+        align-self: center;
+        font-family: 'Sriracha', cursive;
+        font-size: 5rem;
+        color: #FFE6C9;
+        text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+        margin: 1rem;
+    }
+    
+    .settings-panel {
+        grid-area: settings;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-right: 3rem;
+        
+        button {
+            height: 3rem;
+            width: 8rem;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 0.3rem;
+            margin: 1rem;
+            border-radius: 1rem;
+            box-shadow:  2px 1px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.7) inset;
+
+            &:hover {
+                transform: scale(1.1)
+            }
+        }
+
+        .colour-tools {
+            margin-right: 2rem;
+
+            img {
+                height: 6rem;
+
+                &:hover {
+                    transform: scale(1.1)
+                }
+            }
+
+        }
+    }
+    
+    .grid {
+        grid-area: canvas;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: grid;
+        background: #C0C0C0;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        box-shadow: 0px 1px 0 rgba(255,255,255,0.08), 1px 0px 0 rgba(255,255,255,0.08), 1px 2px 0 rgba(255,255,255,0.08), 2px 1px 0 rgba(255,255,255,0.08), 2px 3px 0 rgba(255,255,255,0.08), 3px 2px 0 rgba(255,255,255,0.08), 3px 4px 0 rgba(255,255,255,0.08), 4px 3px 0 rgba(255,255,255,0.08), 4px 5px 0 rgba(255,255,255,0.08), 5px 4px 0 rgba(255,255,255,0.08), -0px -1px 0 rgba(0,0,0,0.05), -1px -0px 0 rgba(0,0,0,0.05), -1px -2px 0 rgba(0,0,0,0.05), -2px -1px 0 rgba(0,0,0,0.05), -2px -3px 0 rgba(0,0,0,0.05), -3px -2px 0 rgba(0,0,0,0.05), -3px -4px 0 rgba(0,0,0,0.05), -4px -3px 0 rgba(0,0,0,0.05), -4px -5px 0 rgba(0,0,0,0.05), -5px -4px 0 rgba(0,0,0,0.05);
+
+
+        .grid-cell {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #9d9d9d17;
+            border-radius: 50%;
+        } 
+    }
+
+    .knob-left {
+        grid-area: leftKnob;
+        justify-self: center;
+        align-self: center;
+        height: 9rem;
+        width: 9rem;
+        position: relative;
+        bottom: 1rem;
+        left: 1.3rem;
+    }
+
+    .knob-right {
+        grid-area: rightKnob;
+        justify-self: center;
+        align-self: center;
+        height: 9rem;
+        width: 9rem;
+        position: relative;
+        bottom: 1rem;
+        right: 1.3rem;
+
+    }
+}
+
+
+// .cursor {
+    
+// }
