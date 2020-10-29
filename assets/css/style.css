@@ -57,7 +57,7 @@ header {
 .frame .settings-panel {
   grid-area: settings;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin-right: 3rem;
 }
@@ -69,6 +69,7 @@ header {
   padding: 0.3rem;
   margin: 1rem;
   border-radius: 1rem;
+  background: #F0F0F0;
   box-shadow: 2px 1px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.7) inset;
 }
 .frame .settings-panel button:hover {
@@ -132,7 +133,7 @@ header {
 
   .frame {
     width: 95vw;
-    height: 100rem;
+    height: 90vh;
   }
   .frame .settings-panel {
     display: flex;
