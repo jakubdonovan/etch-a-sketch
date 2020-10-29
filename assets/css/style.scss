@@ -42,8 +42,9 @@ header {
 
 .frame {
     width: 70vw;
+    height: 70rem;
     max-width: 150rem;
-    min-height: 20rem;
+    min-height: 30rem;
     max-height: 100rem;
     display: grid;
     grid-template: 0.8fr 5fr 0.8fr / 0.5fr 5fr 0.5fr;
@@ -108,10 +109,8 @@ header {
     
     .grid {
         grid-area: canvas;
-        height: 100%;
-        max-height: 100%;
-        width: 100%;
         max-width: 100%;
+        max-height: 100%;
         position: relative;
         display: grid;
         background: #C0C0C0;
@@ -122,33 +121,32 @@ header {
 
         .grid-cell {
             height: 100%;
-            width: 100%;
+            width: 80%;
             border: 1px solid #9d9d9d17;
             border-radius: 50%;
         } 
     }
 
-    .knob-left {
-        grid-area: leftKnob;
-        justify-self: center;
-        align-self: center;
+    .knob {
         height: 9rem;
         width: 9rem;
+        max-width: 100%;
+        max-height: 100%;
+        justify-self: center;
+        align-self: center;
         position: relative;
         bottom: 1rem;
+
+    }
+
+    #knob-left {
+        grid-area: leftKnob;
         left: 1.3rem;
     }
 
-    .knob-right {
+    #knob-right {
         grid-area: rightKnob;
-        justify-self: center;
-        align-self: center;
-        height: 9rem;
-        width: 9rem;
-        position: relative;
-        bottom: 1rem;
         right: 1.3rem;
-
     }
 }
 
@@ -161,12 +159,6 @@ header {
     .frame {
         width: 95vw;
         height: 90vh;
-
-        .settings-panel {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-        }
     }
 
 }
