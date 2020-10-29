@@ -3,20 +3,16 @@ let gridSize = 60 // 60x60 by default
 
 
 // Selectors
-const resizeGrid = document.querySelector('.resize-grid')
-const resetGrid = document.querySelector('.reset-grid')
 const grid = document.querySelector('.grid')
 const gridCells = grid.childNodes
+const resizeGrid = document.querySelector('.resize-grid')
+const resetGrid = document.querySelector('.reset-grid')
+const colourOptions = document.querySelectorAll('.colour-tools img')
 
 
 // Colours
-const rubberButton = document.querySelector('.rubber')
-const purpleButton = document.querySelector('.purple')
-const redButton = document.querySelector('.red')
-const orangeButton = document.querySelector('.orange')
-const greenButton = document.querySelector('.green')
-const blueButton = document.querySelector('.blue')
-const blackButton = document.querySelector('.black')
+const colours = { 'rubber': '#C0C0C0', 'purple': '#80006E', 'red': '#EC021F', 'orange': '#EC7421', 
+                    'green': '#9BCC56', 'blue': '#5AA3D2', 'black': '#303032' }
 
 
 // Listeners
@@ -29,26 +25,12 @@ resetGrid.addEventListener('click', () => {
     clearGrid(grid)
     createGrid(gridSize)
 })
-rubberButton.addEventListener('click', () => {
-    draw(gridCells, '#C0C0C0')
-})
-purpleButton.addEventListener('click', () => {
-    draw(gridCells, '#80006E')
-})
-redButton.addEventListener('click', () => {
-    draw(gridCells, '#EC021F')
-})
-orangeButton.addEventListener('click', () => {
-    draw(gridCells, '#EC7421')
-})
-greenButton.addEventListener('click', () => {
-    draw(gridCells, '#9BCC56')
-})
-blueButton.addEventListener('click', () => {
-    draw(gridCells, '#5AA3D2')
-})
-blackButton.addEventListener('click', () => {
-    draw(gridCells, '#303032')
+colourOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        let colour = colours[option.className]
+
+        draw(gridCells, colour)
+    })
 })
 
 
@@ -82,10 +64,6 @@ const draw = (gridCells, colour) => {
 
 // Initialize
 createGrid(gridSize)
-
-
-
-
 
 
 

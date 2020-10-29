@@ -42,8 +42,8 @@ header {
 
 .frame {
     width: 70vw;
-    height: 70rem;
     max-width: 150rem;
+    min-height: 20rem;
     max-height: 100rem;
     display: grid;
     grid-template: 0.8fr 5fr 0.8fr / 0.5fr 5fr 0.5fr;
