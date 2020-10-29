@@ -1,5 +1,10 @@
+// Fonts
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+// Screen size breakpoints
+$breakpoint-tablet: 1000px;
+
 
 html {
     box-sizing: border-box;
@@ -36,8 +41,10 @@ header {
 
 
 .frame {
-    height: 70rem;
-    width: 110rem;
+    width: 70%;
+    height: 50%;
+    max-height: 100rem;
+    max-width: 150rem;
     display: grid;
     grid-template: 0.8fr 5fr 0.8fr / 0.5fr 5fr 0.5fr;
     grid-template-areas: 'title title title' '. canvas .' 'leftKnob settings rightKnob';
@@ -46,7 +53,7 @@ header {
     box-shadow: 0px 1px 0 rgba(255,255,255,0.05) inset, 1px 0px 0 rgba(255,255,255,0.05) inset, 1px 2px 0 rgba(255,255,255,0.05) inset, 2px 1px 0 rgba(255,255,255,0.05) inset, 2px 3px 0 rgba(255,255,255,0.05) inset, 3px 2px 0 rgba(255,255,255,0.05) inset, 3px 4px 0 rgba(255,255,255,0.05) inset, 4px 3px 0 rgba(255,255,255,0.05) inset, 4px 5px 0 rgba(255,255,255,0.05) inset, 5px 4px 0 rgba(255,255,255,0.05) inset, 5px 6px 0 rgba(255,255,255,0.05) inset, 6px 5px 0 rgba(255,255,255,0.05) inset, 6px 7px 0 rgba(255,255,255,0.05) inset, 7px 6px 0 rgba(255,255,255,0.05) inset, 7px 9px 0 rgba(255,255,255,0.05) inset, 8px 7px 0 rgba(255,255,255,0.05) inset, 8px 9px 0 rgba(255,255,255,0.05) inset, 9px 8px 0 rgba(255,255,255,0.05) inset, -0px -1px 0 rgba(0,0,0,0.05) inset, -1px -0px 0 rgba(0,0,0,0.05) inset, -1px -2px 0 rgba(0,0,0,0.05) inset, -2px -1px 0 rgba(0,0,0,0.05) inset, -2px -3px 0 rgba(0,0,0,0.05) inset, -3px -2px 0 rgba(0,0,0,0.05) inset, -3px -4px 0 rgba(0,0,0,0.05) inset, -4px -3px 0 rgba(0,0,0,0.05) inset, -4px -5px 0 rgba(0,0,0,0.05) inset, -5px -4px 0 rgba(0,0,0,0.05) inset, -5px -6px 0 rgba(0,0,0,0.05) inset, -6px -5px 0 rgba(0,0,0,0.05) inset, -6px -7px 0 rgba(0,0,0,0.05) inset, -7px -6px 0 rgba(0,0,0,0.05) inset, -7px -9px 0 rgba(0,0,0,0.05) inset, -8px -7px 0 rgba(0,0,0,0.05) inset, -8px -9px 0 rgba(0,0,0,0.05) inset, -9px -8px 0 rgba(0,0,0,0.05) inset, 0 0 3px rgba(0,0,0,0.3), 2px 2px 3px rgba(0,0,0,0.3);
     
     border-radius: 3rem;
-    margin: 3em;
+    margin: 2rem;
     
 
     .title {
@@ -138,6 +145,19 @@ header {
         right: 1.3rem;
 
     }
+}
+
+// Mobile
+@media only screen and (max-width: $breakpoint-tablet) {
+    html {
+        font-size: 7px;
+    }
+
+    .frame {
+        width: 95%;
+        height: 50%;
+    }
+
 }
 
 

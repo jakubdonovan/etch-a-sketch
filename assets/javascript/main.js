@@ -30,25 +30,25 @@ resetGrid.addEventListener('click', () => {
     createGrid(gridSize)
 })
 rubberButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#C0C0C0')
+    draw(gridCells, '#C0C0C0')
 })
 purpleButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#80006E')
+    draw(gridCells, '#80006E')
 })
 redButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#EC021F')
+    draw(gridCells, '#EC021F')
 })
 orangeButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#EC7421')
+    draw(gridCells, '#EC7421')
 })
 greenButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#9BCC56')
+    draw(gridCells, '#9BCC56')
 })
 blueButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#5AA3D2')
+    draw(gridCells, '#5AA3D2')
 })
 blackButton.addEventListener('click', () => {
-    cellHighlighter(gridCells, '#303032')
+    draw(gridCells, '#303032')
 })
 
 
@@ -63,14 +63,14 @@ const createGrid = gridSize => {
         grid.appendChild(cell)
     }
 
-    cellHighlighter(gridCells)
+    draw(gridCells)
 }
 
 const clearGrid = (parent) => {
     while (parent.lastChild) parent.removeChild(parent.lastChild)
 }
 
-const cellHighlighter = (gridCells, colour) => {
+const draw = (gridCells, colour) => {
     gridCells.forEach(cell => {
         cell.addEventListener('mouseover', function() {
             this.style.background = colour
