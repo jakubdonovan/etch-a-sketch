@@ -32,10 +32,10 @@ header {
 }
 
 .frame {
-  width: 70%;
-  height: 50%;
-  max-height: 100rem;
+  width: 70vw;
+  height: 70rem;
   max-width: 150rem;
+  max-height: 100rem;
   display: grid;
   grid-template: 0.8fr 5fr 0.8fr/0.5fr 5fr 0.5fr;
   grid-template-areas: "title title title" ". canvas ." "leftKnob settings rightKnob";
@@ -75,6 +75,8 @@ header {
   transform: scale(1.1);
 }
 .frame .settings-panel .colour-tools {
+  display: flex;
+  justify-content: end;
   margin-right: 2rem;
 }
 .frame .settings-panel .colour-tools img {
@@ -86,7 +88,9 @@ header {
 .frame .grid {
   grid-area: canvas;
   height: 100%;
+  max-height: 100%;
   width: 100%;
+  max-width: 100%;
   position: relative;
   display: grid;
   background: #C0C0C0;
@@ -123,12 +127,17 @@ header {
 
 @media only screen and (max-width: 1000px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .frame {
-    width: 95%;
-    height: 50%;
+    width: 95vw;
+    height: 100rem;
+  }
+  .frame .settings-panel {
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
 }
 
